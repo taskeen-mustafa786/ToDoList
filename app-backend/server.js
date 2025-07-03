@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 // Database connection
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://taskeen-mustafa786:TM786@taskeen.17hikpk.mongodb.net/?retryWrites=true&w=majority&appName=Taskeen')
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
