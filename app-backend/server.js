@@ -1,9 +1,8 @@
-require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const todoRoutes = require('./routes/todos');
-const userRoutes = require('./routes/users');
+const userRoutes = require('./routes/users'); // Add this line
 
 const app = express();
 
@@ -18,7 +17,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Routes
 app.use('/api/todos', todoRoutes);
-app.use('/api/users', userRoutes);
+app.use('/api/users', userRoutes); // Add this line
 
 // Error handling middleware
 app.use((err, req, res, next) => {
